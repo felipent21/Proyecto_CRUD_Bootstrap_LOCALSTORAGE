@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD EMPLEADORES</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">  
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<header style="background-color:blue; text-align: center;">
+  <H5 style="color:white">SISTEMA CRUD EPS</H5>
+  <H5 style="color:white">EMPLEADORES</H5>
+</header>
+
+
+<a href="menu.html">
+  <button class="btn- btn-primary rounded float-star mb-3" id="myBtn">MENU</button>
+</a> 
+
+<body style="background-color: white">
+ 
+  <button class="btn- btn-primary rounded float-end mb-3" id="myBtn">NUEVO  EMPLEADOR</button>
+    <div class="container mt-5 justify-content-center mb-3" id="body" style="display:none">
+    <div class="card col-6 d-flex justify-content-center">
+        <div class="card-body">
+            <form id="formulario">
+          <h5 class="card-title bg-primary">REGISTRO DE EMPLEADORES</h5>
+          <p class="card-text bg-primary"></p>
+          <div class="mb-3">
+              <div class="form-group col-12">
+              <label for="tipoid">TIPO DE DOCUMENTO</label>
+              <select class="form-select "  id= "tipoid" aria-label="Default select example">        
+              <option value="CC">CC</option>
+              <option value="TI">TI</option>
+              <option value="PP">PP</option>
+              <option value="RC">RC</option>
+              <option value="OTRO">OTRO</option>                     
+              </select>
+          </div>             
+          </div>
+
+          <div class="mb-3">
+            <div class="form-group col-12">
+              <label for="numero"  class="classValidate hide">NUMERO</label>
+              <input type="text" name="" id="numero" required class="form-control">
+          </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-group col-12">
+              <label for="empresa"  class="classValidate hide">EMPRESA</label>
+              <input type="text" name="" id="empresa" required class="form-control">
+          </div>
+          </div>          
+
+          <div class="mb-3">
+            <div class="form-group col-12">
+              <label for="direccion">DIRECCION</label>
+              <input type="text" name="" id="direccion" required class="form-control">
+          </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-group col-12">
+            <label for="ciudad">CIUDAD</label>
+            <select class="form-select "  id= "ciudad" aria-label="Default select example">        
+              <option value="CALI">CALI</option>
+              <option value="B/QUILLA">BARRANQUILLA</option>
+              <option value="BOGOTA">BOGOTA</option>                     
+            </select>
+          </div>             
+          </div>
+
+          <div class="mb-3">
+            <div class="form-group col-12 " >
+              <label for="postal">CODIGO POSTAL </label>
+              <input type="text"  name="" id="postal" required class="form-control">
+          </div>
+          </div>
+          <!--LA OTRA PARTE DEL FORM-->   
+
+         
+        <div class="mb-3">
+          <div class="form-group col-12">
+            <label for="correo"  class="classValidate hide">CORREO</label>
+            <input type="text" name="" id="correo" required class="form-control"placeholder="name@example.com">
+        </div>
+        </div>
+
+        <div class="mb-3">
+          <div class="form-group col-12">
+          <label for="regimen">REGIMEN</label>
+          <select class="form-select "  id= "regimen" aria-label="Default select example">        
+            <option value="RESP IVA">RESPONSABLE DE IVA</option>
+            <option value="NAT RESP IVA">NATURAL RESP IVA</option>
+            <option value="REG ESPECIAL">REGIMEN ESPECIAL</option>  
+            <option value="NAT NO RESP IVA">NAT NO RESP IVA</option>                    
+          </select>
+          </div>             
+           </div>
+         
+          <div class="mb-3">
+            <input type="submit" class="form-control bt btn-primary mb-3" value="Aceptar">
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="container">
+      <table class="table table-striped" style="color:black" id="lista">
+        <thead class="bg-primary">
+          <tr>
+            <th scope="col"> TIPO DOC</th>
+            <th scope="col"> NUMERO </th>
+            <th scope="col"> EMPRESA </th>
+            <th scope="col"> DIRECCION </th>
+            <th scope="col"> CIUDAD </th> 
+            <th scope="col"> CODPOSTAL </th>
+            <th scope="col"> CORREO </th>
+            <th scope="col"> REGIMEN </th> 
+            <th scope="col"> EDITAR </th>
+            <th scope="col"> ELIMINAR </th>            
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <tr>
+            <th scope="row">1</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="js/crud2.js"></script>
+    <script>
+      var btn = document.getElementById("myBtn").addEventListener("click", function(){
+      var div = document.getElementById("body");
+      div.style = 'block';
+      })
+    </script>
+    </body>
+    
+    <script>
+      $(document).ready(function () {
+      $('#lista').DataTable();
+     } );
+    </script>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.CSS">
+    <!--estos son CDN DE BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <title>LOGIN</title>  
+</head>
+<header style="background-color:blue; text-align: center;">
+<H5 style="color:white">SISTEMA CRUD EPS</H5>
+<H5 style="color:white">INICIO DE SESION</H5>
+</header>
+  <body id="bodyindex">
+    <div class="container  col-4 ">
+    <form >
+        <div class="form-group mt-5">
+          <label for="exampleInputEmail1" class="form-label">USUARIO</label>
+          <input type="text" class="form-control" id="username" >        
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1" class="form-label">CONTRASEÑA</label>
+          <input type="password" class="form-control" id="password">
+        </div> 
+        <div class="form-group mt-5">              
+        <button  type="button"  class="btn btn-primary" onclick="crear()">REGISTRAME</button>
+        <button  type="button"  class="btn btn-primary" onclick="validar()">INGRESAR</button>
+      </div>
+      </form>
+    </form>
+  </div>    
+    <script src="js/login.js"></script>
+</body>
+</html>
